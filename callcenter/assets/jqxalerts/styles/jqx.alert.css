@@ -1,0 +1,33 @@
+ .jqx-alert  
+   {  
+     position: absolute;  
+     overflow: hidden;  
+     z-index: 99999;  
+     margin: 0;  
+     padding: 0;  
+   }  
+   .jqx-alert-header  
+   {  
+     outline: none;  
+     border: 1px solid #999;  
+     overflow: hidden;  
+     padding: 5px;  
+     height: auto;  
+     white-space: nowrap;  
+     overflow: hidden;  
+     background-color:#E8E8E8; background-image:-webkit-gradient(linear,0 0,0 100%,from(#fafafa),to(#dadada)); background-image:-moz-linear-gradient(top,#fafafa,#dadada); background-image:-o-linear-gradient(top,#fafafa,#dadada);     
+   }  
+   .jqx-alert-content  
+   {  
+     outline: none;  
+     overflow: auto;  
+     text-align: left;  
+     background-color: #fff;  
+     padding: 5px;  
+     border: 1px solid #999;  
+     border-top: none;  
+   }  
+   .jqx-alert-panel {
+	text-align: center;
+	margin: 1em 0em 0em 1em;
+   }
