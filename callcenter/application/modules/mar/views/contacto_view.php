@@ -91,7 +91,7 @@
                                 //jqxAlert.alert ('El dato se grabó correctamente.');
                             }else{
                                 //alert("Problemas al guardar.");
-                                jqxAlert.alert ('Problemas al guardar.');
+                                $messager.alert ('Error','Problemas al guardar.');
                                 $("#drop").jqxGrid('hideloadelement');
                                 $("#btImportar").jqxButton({ disabled: false});
                             }
