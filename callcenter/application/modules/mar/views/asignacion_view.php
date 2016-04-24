@@ -1,4 +1,4 @@
- <script type="text/javascript" src="<?php echo base_url();?>assets/jqwidgets/jqxgrid.filter.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>assets/jqwidgets/jqxgrid.filter.js"></script>
  <script type="text/javascript" src="<?php echo base_url();?>assets/jqwidgets/jqxgrid.sort.js"></script>
  <script type="text/javascript" src="<?php echo base_url();?>assets/jqwidgets/jqxgrid.pager.js"></script> 
  <script type="text/javascript" src="<?php echo base_url();?>assets/jqwidgets/jqxpanel.js"></script>
@@ -765,16 +765,18 @@
         }*/
        
        function opselasignar(){
-            alert('prueba de git hecha1 la cagada');
        	var getselectedrowindexes = $('#jqxgrid').jqxGrid('getselectedrowindexes');
-                   var cont=0; 
+        var cont=0; 
+        var conoperador=0;
+ 
                         for (var i = 0; i < getselectedrowindexes.length; i++) {
                          	
                      	 var selectedRowData = $('#jqxgrid').jqxGrid('getrowdata', getselectedrowindexes[i]);
                      	                	 	        
                      	 	    if (selectedRowData.ultimo_teleoperador_asignado){
-		                         	jqxAlert.alert('Uno de los registros de cliente seleccionado tiene Teleoperador, realice una reasignación','Información');
-	                        	}else{
+                     	 	    	conoperador=1;
+                     	 	    	$.messager.alert('Información','Uno de los registros de cliente seleccionado tiene Teleoperador realice una reasignación');
+		                       }else{ 
 	                        				cont=cont+1;
 	                        	}
 	                        	                         	                     	 	       
@@ -783,16 +785,23 @@
                          {
                          	abrirSelAsignacion();
                          }*/
-              	if (getselectedrowindexes<=0) {
-              		jqxAlert.alert('Seleccione un registro','Seleccionar');
-	             }
+                      
+              	if (cont > 0) {
+              		if (cont==getselectedrowindexes.length){
+                  		 	       abrirSelAsignacion();
+	                      }
+         		}
 	              else{
-	                        	 	if (cont==getselectedrowindexes.length){
-	                        	 		
-	                        	abrirSelAsignacion();
-	                        	 	}
-									}
-                       }
+	              	  if (conoperador!=1){
+	              	      //jqxAlert.alert('Uno de los registros de cliente seleccionado tiene Teleoperador realice una reasignación','Información');
+	                     //} else{
+	                     	$.messager.alert('Información','Seleccione uno o varios registros!');
+	                     	//jqxAlert.alert('Seleccione un registro','Seleccionar');
+	                     }
+	              	  	   	
+	                        	 	
+					}
+        }
         
         function opReasignar(){
 		  abrirReasignacion();
@@ -805,7 +814,8 @@
         
         function opSelReasignar(){
 		  var getselectedrowindexes = $('#jqxgrid').jqxGrid('getselectedrowindexes');
-                   var cont=0; 
+          var cont=0; 
+          var conoperador=0;
                         for (var i = 0; i < getselectedrowindexes.length; i++) {
                          	
                      	 var selectedRowData = $('#jqxgrid').jqxGrid('getrowdata', getselectedrowindexes[i]);
@@ -813,7 +823,9 @@
                      	 	    if (selectedRowData.ultimo_teleoperador_asignado){
                      	 	      	cont=cont+1; 	
 	                        	}else{
-	                        		jqxAlert.alert('Uno de los registros de cliente seleccionado no tiene Teleoperador, realice una asignación','Información');
+	                        		conoperador=1;
+	                        		$.messager.alert('Información','Uno de los registros de cliente seleccionado no tiene Teleoperador, realice una asignación!');
+	                        		//jqxAlert.alert('Uno de los registros de cliente seleccionado no tiene Teleoperador, realice una asignación','Información');
 	                        		
 	                        	}
 	                        	                         	                     	 	       
@@ -822,15 +834,19 @@
                          {
                          	abrirSelAsignacion();
                          }*/
-              	if (getselectedrowindexes<=0) {
-              		jqxAlert.alert('Seleccione un registro','Seleccionar');
-	             }
-	              else{
-	                        	 	if (cont==getselectedrowindexes.length){
-		                        	 	alert('prueba');
+              	if (cont > 0 ) {
+              		if (cont==getselectedrowindexes.length){
 	                        	 			abrirSelReasignacion();
 	                        	 	}
-							}
+                 }
+	              else{
+	              	if (conoperador!=1){
+	              		$.messager.alert('Información','Seleccione uno o varios registros!');
+	                        		
+	              		//Uno de los registros de cliente seleccionado no tiene Teleoperador, realice una asignación
+	                    //jqxAlert.alert('Seleccione un registro','Seleccionar');
+	                    }    	 	
+					}
         }
         
         /*function opSelReasignar(){
