@@ -765,7 +765,7 @@
         }*/
        
        function opselasignar(){
-            alert('prueba de git hecha la cagada');
+            alert('prueba de git hecha1 la cagada');
        	var getselectedrowindexes = $('#jqxgrid').jqxGrid('getselectedrowindexes');
                    var cont=0; 
                         for (var i = 0; i < getselectedrowindexes.length; i++) {
