@@ -826,6 +826,7 @@
 	             }
 	              else{
 	                        	 	if (cont==getselectedrowindexes.length){
+		                        	 	alert('prueba');
 	                        	 			abrirSelReasignacion();
 	                        	 	}
 							}
