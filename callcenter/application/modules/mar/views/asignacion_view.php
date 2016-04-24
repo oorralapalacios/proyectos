@@ -136,7 +136,7 @@
                     });	
                 }else{
                 	$("#drop").jqxGrid('hideloadelement');
-                	jqxAlert.alert('Validaci贸n incorrecta, revise y corrija los datos','Proceso de validaci贸n');
+                	jqxAlert.alert('Validaci髇 incorrecta, revise y corrija los datos','Proceso de validaci髇');
                 	$("#btImportar").jqxButton({ disabled: false});
                	}
         });   
@@ -283,10 +283,10 @@
 					    case 'Ver detalle':
 					        opinfoadicional();
 					        break;
-					    case 'Asignaci贸n':
+					    case 'Asignaci髇':
 					        opasignar();
 					        break;
-					    case 'Sel asignaci贸n':
+					    case 'Sel asignaci髇':
 					        opselasignar();
 					        break;    
 					    case 'Reasignaci贸n':
